@@ -1,5 +1,7 @@
 package com.example.ClaryFi.application.usecases;
 
+import com.example.ClaryFi.api.dtos.SignupRequest;
+import com.example.ClaryFi.api.dtos.SignupResponse;
 import com.example.ClaryFi.domain.model.Organization;
 import com.example.ClaryFi.domain.model.User;
 import com.example.ClaryFi.domain.repositories.OrganizationRepository;

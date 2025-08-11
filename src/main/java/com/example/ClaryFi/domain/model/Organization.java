@@ -1,6 +1,8 @@
 package com.example.ClaryFi.domain.model;
 
 
+import com.example.ClaryFi.utils.roles.Environment;
+import com.example.ClaryFi.utils.roles.KycStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 

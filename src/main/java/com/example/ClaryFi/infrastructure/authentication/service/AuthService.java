@@ -10,4 +10,6 @@ public interface AuthService {
     void verifyEmail(String token);
     String getAccessToken(String username, String password); // For login
     TokenResponse login(String email, String password, String realm);
+    void executeEmailVerification(String userId, String token, String realm);
+    void assignRole(String userId, String roleName, String realm);
 }

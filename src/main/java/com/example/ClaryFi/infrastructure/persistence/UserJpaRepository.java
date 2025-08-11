@@ -5,6 +5,7 @@ import com.example.ClaryFi.domain.repositories.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class UserJpaRepository implements UserRepository {
@@ -15,6 +16,11 @@ public class UserJpaRepository implements UserRepository {
 
     @Override
     public Optional<User> findByEmail(String email) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<User> findUserById(UUID id) {
         return Optional.empty();
     }
 }
