@@ -1,5 +1,6 @@
 package com.example.ClaryFi.application.usecases;
 
+import com.example.ClaryFi.application.ports.out.EmailSenderPort;
 import com.example.ClaryFi.domain.repositories.OrganizationRepository;
 import com.example.ClaryFi.domain.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
