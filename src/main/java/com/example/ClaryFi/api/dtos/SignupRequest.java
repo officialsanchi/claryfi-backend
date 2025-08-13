@@ -11,4 +11,11 @@ public class SignupRequest {
     private String password;
     private String username;
     private String businessName;
+    private String businessEmail;
+
+    private String businessWebsite;
+
+    private String businessPhoneNumber;
+
+    private String businessIndustry;
 }
