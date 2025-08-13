@@ -3,6 +3,7 @@ package com.example.ClaryFi.infrastructure.adapter.output.persistance.mapper;
 import com.example.ClaryFi.domain.model.ApiKey;
 import com.example.ClaryFi.infrastructure.adapter.output.persistance.entity.ApiKeyEntity;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class ApiKeyMapper {
@@ -23,7 +24,7 @@ public class ApiKeyMapper {
         entity.setId( domain.getId() );
         entity.setKey( domain.getKey() );
         entity.setUserId(domain.getUserId());
-        entity.setCreatedAt( LocalDateTime.from( domain.getCreatedAt() ) );
+        entity.setCreatedAt( domain.getCreatedAt() );
         entity.setRevokedAt( domain.getRevokedAt() );
         return entity;
     }

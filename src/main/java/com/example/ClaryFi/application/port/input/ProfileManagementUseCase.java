@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
 public interface ProfileManagementUseCase {
     User viewProfile(Long userId);
     void updateProfile(Long userId, User updatedUser);
-    User editProfile(String userId, User updatedProfile);
+    User editProfile(Long userId, User updatedProfile);
 }

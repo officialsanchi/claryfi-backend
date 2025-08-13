@@ -1,7 +1,9 @@
 package com.example.ClaryFi.domain.model;
 
+import jakarta.ws.rs.SeBootstrap;
 import lombok.*;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Getter
@@ -12,7 +14,7 @@ import java.time.LocalDateTime;
 public class ApiKey {
     private String id;
     private String key;
-    private LocalDateTime createdAt;
+    private Instant createdAt;
     private String userId;
     private boolean revokedAt;
 
@@ -27,7 +29,7 @@ public class ApiKey {
     public ApiKey() {
     }
 
-    public ApiKey(String id, String key, LocalDateTime createdAt, String userId, boolean revokedAt) {
+    public ApiKey(String id, String key, Instant createdAt, String userId, boolean revokedAt) {
         this.id = id;
         this.key = key;
         this.createdAt = createdAt;
@@ -51,11 +53,11 @@ public class ApiKey {
         this.key = key;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 

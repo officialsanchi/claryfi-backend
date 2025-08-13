@@ -1,0 +1,14 @@
+keycloak.server.url=http://localhost:8094
+keycloak.auth.password=${KEYCLOAK_PASSWORD:admin}
+keycloak.auth.user=${KEYCLOAK_USERNAME:admin}
+realm=${KEYCLOAK_REALM:nkwadoma}
+keycloak.client.id = nkwadoma
+keycloak.client.secret=LcOjRzpmMSdbVJQ4wjyxrQ6kqPdBZ0Y6
+keycloak.principal_attribute=${PREFERRED_USERNAME:preferred_username}
+spring.security.oauth2.resourceserver.opaquetoken.client-id=nkwadoma
+spring.security.oauth2.resourceserver.opaquetoken.client-secret=LcOjRzpmMSdbVJQ4wjyxrQ6kqPdBZ0Y6
+spring.security.oauth2.resourceserver.opaquetoken.introspection-uri=${keycloak.server.url}/realms/${realm}/protocol/openid-connect/token/introspect
+spring.security.oauth2.resourceserver.jwt.issuer-uri=${keycloak.server.url}/realms/${realm}
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri=${keycloak.server.url}/realms/${realm}/protocol/openid-connect/certs
+logging.level.org.springframework.security=DEBUG
+keycloak.refresh-token.url=${keycloak.server.url}/realms/${realm}/protocol/openid-connect/token

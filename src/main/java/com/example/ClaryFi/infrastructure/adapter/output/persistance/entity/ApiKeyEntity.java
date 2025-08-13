@@ -19,7 +19,7 @@ public class ApiKeyEntity {
     private String key;
 
     @Column(nullable = false)
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @Column(nullable = false)
     private String userId;
@@ -38,7 +38,7 @@ public class ApiKeyEntity {
 
     public ApiKeyEntity() {}
 
-    public ApiKeyEntity(String id, String key, LocalDateTime createdAt, String userId, boolean revokedAt) {
+    public ApiKeyEntity(String id, String key, Instant createdAt, String userId, boolean revokedAt) {
         this.id = id;
         this.key = key;
         this.createdAt = createdAt;
@@ -52,8 +52,8 @@ public class ApiKeyEntity {
     public String getKey() { return key; }
     public void setKey(String key) { this.key = key; }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public Instant getCreatedAt() { return createdAt; }
+    public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
 
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
