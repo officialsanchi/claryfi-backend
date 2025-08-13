@@ -26,9 +26,7 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/secret.yml
-Docker-compose-local.yml
-CLIENT-SECRET: 5gcGkJtbzliRLN8jkHexMPNlg2Vr9zNT
+!**/src/main/**/build/ secret.yml
 !**/src/test/**/build/
 
 ### VS Code ###

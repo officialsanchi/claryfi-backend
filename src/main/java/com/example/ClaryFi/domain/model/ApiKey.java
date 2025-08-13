@@ -1,71 +1,35 @@
 package com.example.ClaryFi.domain.model;
 
-import jakarta.ws.rs.SeBootstrap;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
+import java.util.UUID;
 
-@Getter
-@Setter
-
-
+@Entity
+@Table(name = "api_keys")
 @Data
 public class ApiKey {
-    private String id;
-    private String key;
-    private Instant createdAt;
-    private String userId;
-    private boolean revokedAt;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
-    public boolean getRevokedAt() {
-        return false;
-    }
+    @ManyToOne
+    @JoinColumn(name = "org_id")
+    private Organization organization;
 
-    public void setRevokedAt(boolean revokedAt) {
-        this.revokedAt = revokedAt;
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Environment environment;
 
-    public ApiKey() {
-    }
+    @Column(unique = true, nullable = false, length = 255)
+    private String publicKey;
 
-    public ApiKey(String id, String key, Instant createdAt, String userId, boolean revokedAt) {
-        this.id = id;
-        this.key = key;
-        this.createdAt = createdAt;
-        this.userId = userId;
-        this.revokedAt = revokedAt;
-    }
+    @Column(unique = true, nullable = false, length = 255)
+    private String secretKey;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('active', 'revoked') default 'active'")
+    private KeyStatus status = KeyStatus.ACTIVE;
+    private Instant createdAt = Instant.now();
 }
